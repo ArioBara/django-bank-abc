@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  {% load static %}
+  <title>CRUD Simpel menggunakan Django</title>
+  <link href="{% static 'icon/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <h4 class="mt-4">CRUD Simpel menggunakan Django</h4>
+    <p class="mb-4">Aplikasi Create, Read, Update, Delete Menggunakan Django Framework</p>
+    <form method="POST" action="/updatedata/{{ editdatanya.id }}">
+      {% csrf_token %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Edit Data Mahasiswa Universitas X</h6>
+        </div>
+        <div class="card-body">
+          <label>Nama Mahasiswa</label>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-user" placeholder="Masukkan Nama Mahasiswa" name="nama"
+              id="id_nama" value="{{ editdatanya.nama }}">
+          </div>
+          <label>Nim Mahasiswa</label>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-user" placeholder="Masukkan NIM Mahasiswa" name="nim"
+              id="id_nim" value="{{ editdatanya.tempat_lahir }}" maxlength="11">
+          </div>
+          <label>Fakultas</label>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-user" placeholder="Masukkan Asal Fakultas Mahasiswa"
+              name="fakultas" id="id_fakultas" value="{{ editdatanya.tanggal_lahir }}">
+          </div>
+          <label>Jurusan</label>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-user" placeholder="Masukkan Asal Jurusan Mahasiswa"
+              name="jurusan" id="id_jurusan" value="{{ editdatanya.jenis_kelamin }}">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-user" placeholder="Masukkan Asal Jurusan Mahasiswa"
+              name="jurusan" id="id_jurusan" value="{{ editdatanya.alamat }}">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan Data</button>
+          <a href="/" class="btn btn-default">Batal</a>
+        </div>
+      </div>
+    </form>
+    <footer class="mt-5 mb-3">
+      <div class="container my-auto">
+        <div class="text-center my-auto">
+          <span>developed by <a href="https://indrijunanda.gitlab.io" target="_blank" style="color: #424242;"><b>indrijunanda</b><a></span>
+        </div>
+      </div>
+    </footer> 
+  </div>
+
+  <!--script src="{% static 'jquery/jquery.slim.min.js' %}"></script-->
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
